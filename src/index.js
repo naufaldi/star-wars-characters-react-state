@@ -5,7 +5,7 @@ import isFunction from 'lodash/isFunction';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import CharacterList from './CharacterList';
-
+import endpoint from './endpoint';
 import dummyData from './dummy-data';
 
 import './styles.scss';
