@@ -5,6 +5,8 @@ import isFunction from 'lodash/isFunction';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import CharacterList from './CharacterList';
+import CharactersView from './CharacterView';
+
 import endpoint from './endpoint';
 import dummyData from './dummy-data';
 
@@ -77,6 +79,7 @@ const useThunkReducer = (reducer, initialState) => {
 };
 
 const Application = () => {
+  // abstraction
   const [state, dispatch] = useThunkReducer(reducer, initialState);
   const { characters } = state;
 
@@ -95,6 +98,9 @@ const Application = () => {
             Fetch Characters
           </button>
           <CharacterList characters={characters} />
+        </section>
+        <section className="CharacterView">
+          <Router path="/characters/:id" component={CharactersView} />
         </section>
       </main>
     </div>
